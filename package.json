@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "babel-plugin-react-native-web": "^0.9.8",
-    "gatsby": "^2.0.0",
+    "gatsby": "^1.0.0",
     "gatsby-plugin-manifest": "^2.0.2",
     "gatsby-plugin-netlify": "^1.0.19-9",
     "gatsby-plugin-offline": "^2.0.5",
