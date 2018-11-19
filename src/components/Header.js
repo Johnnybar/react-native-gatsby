@@ -4,14 +4,31 @@ import Link from 'gatsby-link'
 import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
 
 const styles = StyleSheet.create({
-  box: { padding: 10, margin: 10, borderWidth: 1, borderColor: "black" },
-  text: { fontWeight: 'bold', color: "red" },
-  button: {
-    marginVertical: 40, paddingVertical: 20, paddingHorizontal: 10,
-    borderWidth: 1, borderColor: "black", backgroundColor: "lightgrey", alignItems: "center"
+
+  container: {
+    flex: 6,
+    backgroundColor: '#35605a'
   },
-  buttonText: { fontWeight: 'bold', color: "black" },
-});
+  buttonRow: {
+    flex: 2,
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderBottomWidth: 1,
+    borderColor: '#ffffff'
+  },
+  buttonStyles:{
+    backgroundColor:'#35605a',
+    width: '50%',
+    height: '50%',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  buttonText:{
+    fontSize: 18,
+    color: '#ffffff'
+  }
+})
+
 
 export const IndexPage = () => (
   <View style={styles.box}>
@@ -38,20 +55,63 @@ const Header = (props) => (
                     <Text style={styles.buttonText}>Button</Text>
                   </TouchableOpacity>
                   <Link to="/page-2/">Go to page 2</Link>
+                  <View style={styles.container}>
+      <View style={styles.buttonRow}>
+        <TouchableOpacity style={styles.buttonStyles} onPress={()=>{
+          console.log('LessonRT')}
+        }>
+          <Text style={styles.buttonText}>
+            LESSONS
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.buttonStyles} onPress={()=>{
+          console.log('RegisterRT')}
+        }>
+          <Text style={styles.buttonText}>
+            REGISTER
+          </Text>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.buttonRow}>
+        <TouchableOpacity style={styles.buttonStyles} onPress={()=>{
+          console.log('BlogRT')}
+        }>
+          <Text style={styles.buttonText}>
+            BLOG
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.buttonStyles} onPress={()=>{
+          console.log('ContactRT')}
+        }>
+          <Text style={styles.buttonText}>
+            CONTACT
+          </Text>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.buttonRow}>
+        <TouchableOpacity style={styles.buttonStyles} onPress={()=>{
+          console.log('QuizRT')}
+        }>
+          <Text style={styles.buttonText}>
+            QUIZ
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.buttonStyles} onPress={()=>{
+          console.log('AboutRT')}
+        }>
+          <Text style={styles.buttonText}>
+            ABOUT
+          </Text>
+        </TouchableOpacity>
+      </View>
+
+    </View>
                 </View>
-                <p>A fully responsive site  designed by <a href="https://html5up.net">HTML5 UP</a> and released<br />
-                for free under the <a href="https://html5up.net/license">Creative Commons</a> license.</p>
+
 
             </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="javascript:;" onClick={() => {props.onOpenArticle('intro')}}>Intro</a></li>
-                <li><a href="javascript:;" onClick={() => {props.onOpenArticle('work')}}>Work</a></li>
-                <li><a href="javascript:;" onClick={() => {props.onOpenArticle('about')}}>About</a></li>
-                <li><a href="javascript:;" onClick={() => {props.onOpenArticle('contact')}}>Contact</a></li>
-            </ul>
-        </nav>
+
     </header>
 )
 
@@ -59,5 +119,7 @@ Header.propTypes = {
     onOpenArticle: PropTypes.func,
     timeout: PropTypes.bool
 }
+
+
 
 export default Header

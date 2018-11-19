@@ -5,10 +5,11 @@
   "author": "Hunter Chang",
   "engines": {
     "node": "10.9.0",
-    "yarn":"1.12.3"
+    "yarn": "1.12.3"
   },
   "dependencies": {
     "babel-plugin-react-native-web": "^0.9.8",
+    "concurrently": "^4.1.0",
     "gatsby": "^2.0.0",
     "gatsby-plugin-manifest": "^2.0.2",
     "gatsby-plugin-netlify": "^1.0.19-9",
@@ -21,17 +22,18 @@
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",
     "react-native": "^0.57.5",
-    "react-native-web": "^0.9.8" 
+    "react-native-web": "^0.9.8"
   },
   "keywords": [
     "gatsby"
   ],
   "license": "MIT",
   "scripts": {
+    "develop": "gatsby develop",
     "build": "gatsby build",
     "heroku-postbuild": "gatsby build",
     "start": "gatsby serve",
-    "develop": "gatsby develop",
+    "push": "concurrently \"git push heroku master\" \"git push origin master\"",
     "format": "prettier --write '**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
