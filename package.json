@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "author": "Hunter Chang",
   "engines": {
-    "node": "10.9.0"
+    "node": "10.9.0",
+    "yarn":"1.12.3"
   },
   "dependencies": {
     "babel-plugin-react-native-web": "^0.9.8",
@@ -27,8 +28,9 @@
   ],
   "license": "MIT",
   "scripts": {
-    "heroku-postbuild": "gatsby build",
     "build": "gatsby build",
+    "heroku-postbuild": "gatsby build",
+    "start": "gatsby serve",
     "develop": "gatsby develop",
     "format": "prettier --write '**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1"
