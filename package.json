@@ -3,8 +3,8 @@
   "description": "Gatsby Starter - Dimension V2",
   "version": "1.0.0",
   "author": "Hunter Chang",
-  "engines":{
-    "node":"10.9.0"
+  "engines": {
+    "node": "10.9.0"
   },
   "dependencies": {
     "babel-plugin-react-native-web": "^0.9.8",
@@ -27,7 +27,6 @@
   ],
   "license": "MIT",
   "scripts": {
-     "heroku-postbuild": "gatsby build",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write '**/*.js'",
