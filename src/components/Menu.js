@@ -6,6 +6,7 @@ import {
   Alert,
   TouchableOpacity
 } from 'react-native';
+import {Link} from 'gatsby'
 
 export class Menu extends React.Component {
 
@@ -53,12 +54,12 @@ export class Menu extends React.Component {
           </Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.buttonStyles} onPress={()=>{
-          this.props.navigate('AboutRT')}
-        }>
+          console.log('AboutRT')}
+        }><Link to="/about-page/">
           <Text style={styles.buttonText}>
             ABOUT
           </Text>
-        </TouchableOpacity>
+        </Link></TouchableOpacity>
       </View>
 
     </View>)

@@ -1,11 +1,15 @@
 import React from 'react'
 // import Layout from '../components/layout'
-import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
 
+import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
+import {Link} from 'gatsby'
 import {Header} from '../components/HeaderNew'
 import {Hero} from '../components/Hero'
 import {Menu} from '../components/Menu'
 // import Footer from '../components/Footer'
+
+
+//This is Home.js from the original globo react native app
 
 class IndexPage extends React.Component {
   constructor(props) {
