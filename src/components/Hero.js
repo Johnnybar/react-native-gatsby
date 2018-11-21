@@ -6,7 +6,7 @@ export class Hero extends React.Component {
   render() {
 
     return (
-      <Image style={styles.heroImage} source ={require('./img/Logo.png')}/>
+      <Image style={styles.heroImage} source ={require('../assets/Logo.png')}/>
 
   )
   }

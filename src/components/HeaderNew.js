@@ -47,7 +47,7 @@ componentDidMount(){
       ? this.state.loggedUser
       : this.props.message;
     return (<View style={styles.headStyle}>
-      <Image style={styles.logoStyle} source ={require('./img/drake.jpeg')}/>
+      <Image style={styles.logoStyle} source ={require('../assets/drake.jpeg')}/>
       <Text style={styles.headText} onPress={this.toggleUser}>{display}
       </Text>
     </View>)
