@@ -17,7 +17,6 @@ if (process.env.NODE_ENV != 'production') {
   secrets = require('../../secrets.json');
   apiCode = secrets.api;
 } else {
-  console.log('in else');
   apiCode = process.env.API;
 }
 
