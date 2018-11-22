@@ -29,12 +29,11 @@ export class Menu extends React.Component {
         </TouchableOpacity>
       </View>
       <View style={styles.buttonRow}>
-        <TouchableOpacity style={styles.buttonStyles} onPress={()=>{
-          this.props.navigate('BlogRT')}
-        }>
+        <TouchableOpacity style={styles.buttonStyles}><Link to="/blog-page/">
           <Text style={styles.buttonText}>
             BLOG
           </Text>
+        </Link>
         </TouchableOpacity>
         <TouchableOpacity style={styles.buttonStyles} onPress={()=>{
           this.props.navigate('ContactRT')}

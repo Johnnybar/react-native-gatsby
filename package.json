@@ -23,6 +23,7 @@
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",
     "react-native": "^0.57.5",
+    "react-native-render-html": "^3.10.0",
     "react-native-web": "^0.9.8",
     "react-navigation": "^3.0.0"
   },
