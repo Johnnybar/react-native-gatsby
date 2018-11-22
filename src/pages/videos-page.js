@@ -13,9 +13,11 @@ import {
 let apiCode;
 let secrets;
 if (process.env.NODE_ENV != 'production') {
+  console.log('in if');
   secrets = require('../../secrets.json');
   apiCode = secrets.api;
 } else {
+  console.log('in else');
   apiCode = process.env.API;
 }
 
@@ -31,7 +33,7 @@ export default class Video extends React.Component {
 
   }
   componentDidMount() {
-
+console.log(apiCode);
     return fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=react_native&type=video&key=${apiCode}`).then((response) => response.json()).then((responseJson) => {
       console.log(responseJson);
       this.setState({
