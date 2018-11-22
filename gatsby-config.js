@@ -21,6 +21,5 @@ module.exports = {
     'gatsby-plugin-sass',
     'gatsby-plugin-offline',
   `gatsby-plugin-react-native-web`,
-  `gatsby-plugin-react-next`
   ],
 }
