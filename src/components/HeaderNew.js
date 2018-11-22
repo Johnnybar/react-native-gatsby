@@ -61,6 +61,7 @@ componentDidMount(){
 const styles = StyleSheet.create({
   headStyle: {
     paddingTop: 30,
+    
     paddingRight: 10,
     backgroundColor: Platform.OS === 'android'
       ? '#31e981'
