@@ -2,6 +2,8 @@ import React from 'react';
 import {Link} from 'gatsby'
 import {
   Alert,
+  Button,
+  WebView,
   Text,
   View,
   FlatList,
@@ -10,6 +12,7 @@ import {
   StyleSheet
 } from 'react-native';
 
+let tubeUrl;
 let apiCode;
 let secrets;
 if (process.env.NODE_ENV != 'production') {
@@ -20,6 +23,7 @@ if (process.env.NODE_ENV != 'production') {
 }
 
 export default class Video extends React.Component {
+
   static navigationOptions = {
     header: null
   };
@@ -73,29 +77,46 @@ export default class Video extends React.Component {
 }
 
 export class TubeItem extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {}
 
+  }
   onPress = () => {
-    this.props.navigate('VideoDetailRT', {ytubeId: this.props.id})
+    tubeUrl = `https://www.youtube.com/embed/${this.props.id}`;
+    this.setState({ytLink: tubeUrl})
   }
 
   render() {
-    return (<TouchableWithoutFeedback onPress={this.onPress}>
-      <View style={{
-          paddingTop: 20,
-          alignItems: 'center'
-        }}>
-        <Image style={{
-            width: '100%',
-            height: 200
-          }} source={{
-            uri: this.props.imageSrc
-          }}/>
-        <Text>
-          {this.props.title}
-        </Text>
+    return (<View>
+      {
+        this.state.ytLink && (<View>
+          <iframe src={this.state.ytLink} width="560" height="315" frameBorder="0" allowFullScreen="allowFullScreen"></iframe>
+          <Button title='close' style={styles.closeButton} onPress={() => this.setState({ytLink: false})}></Button>
+        </View>)
+      }
+      {
+        !this.state.ytLink && <TouchableWithoutFeedback onPress={this.onPress}>
 
-      </View>
-    </TouchableWithoutFeedback>)
+            <View style={{
+                paddingTop: 20,
+                alignItems: 'center'
+              }}>
+              <Image style={{
+                  width: '100%',
+                  height: 200
+                }} source={{
+                  uri: this.props.imageSrc
+                }}/>
+              <Text>
+                {this.props.title}
+              </Text>
+
+            </View>
+
+          </TouchableWithoutFeedback>
+      }
+    </View>)
   }
 }
 
@@ -113,5 +134,9 @@ const styles = StyleSheet.create({
   backButton: {
     paddingBottom: 50,
     textAlign: 'center'
+  },
+  closeButton:{
+    width: 100,
+    height: 100
   }
 });
