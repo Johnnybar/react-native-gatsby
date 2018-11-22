@@ -16,10 +16,11 @@ export class Menu extends React.Component {
       <View style={styles.buttonRow}>
         <TouchableOpacity style={styles.buttonStyles} onPress={()=>{
           this.props.navigate('LessonRT')}
-        }>
+        }><Link to="/videos-page/">
           <Text style={styles.buttonText}>
             LESSONS
           </Text>
+        </Link>
         </TouchableOpacity>
         <TouchableOpacity style={styles.buttonStyles} onPress={()=>{
           this.props.navigate('RegisterRT')}
@@ -45,14 +46,8 @@ export class Menu extends React.Component {
           </Text>
         </TouchableOpacity>
       </View>
-      <View style={styles.buttonRow}>
-        <TouchableOpacity style={styles.buttonStyles} onPress={()=>{
-          this.props.navigate('QuizRT')}
-        }>
-          <Text style={styles.buttonText}>
-            QUIZ
-          </Text>
-        </TouchableOpacity>
+      <View style={styles.aboutRow}>
+
         <TouchableOpacity style={styles.buttonStyles} onPress={()=>{
           console.log('AboutRT')}
         }><Link to="/about-page/">
@@ -79,6 +74,13 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderColor: '#ffffff'
   },
+  aboutRow: {
+    flex: 2,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    borderBottomWidth: 1,
+    borderColor: '#ffffff'
+  },
   buttonStyles:{
     backgroundColor:'#35605a',
     width: '50%',
@@ -86,6 +88,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center'
   },
+
   buttonText:{
     fontSize: 18,
     color: '#ffffff'

@@ -20,7 +20,11 @@ export class Header extends React.Component {
       })
     }
     else{
-      this.props.navigate('LoginRT')
+      this.setState({
+        isLoggedIn: true
+      })
+
+      // this.props.navigate('LoginRT')
     }
   }
 
@@ -44,10 +48,10 @@ componentDidMount(){
 }
   render() {
     let display = this.state.isLoggedIn
-      ? this.state.loggedUser
+      ? 'Logged In'
       : this.props.message;
     return (<View style={styles.headStyle}>
-      <Image style={styles.logoStyle} source ={require('../assets/drake.jpeg')}/>
+      <Image style={styles.logoStyle} source ={require('../assets/mountlogo.png')}/>
       <Text style={styles.headText} onPress={this.toggleUser}>{display}
       </Text>
     </View>)

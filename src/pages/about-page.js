@@ -13,8 +13,9 @@ export default class About extends React.Component {
 
     render() {
         return (
-            <ScrollView style={styles.container}>
-                <Image style={styles.pics} source={require('../assets/drake.jpeg')}/>
+            <View style={styles.container}>
+              <View style={styles.inner_container}>
+                <Image style={styles.pics} source={require('../assets/mountlogo.png')}/>
 
                 <Text style={styles.aboutTitle}>Who We Are</Text>
                 <Text style={styles.aboutText}>{aboutGlobo}</Text>
@@ -23,22 +24,23 @@ export default class About extends React.Component {
                 <Text style={styles.aboutTitle}>What We Do</Text>
                 <Text style={styles.aboutText}>{whatGlobo}</Text>
                 <Link to='/'>Back</Link>
-            </ScrollView>
+                </View>
+            </View>
         );
     }
 }
 
 const styles = StyleSheet.create({
-  outer_container: {
+  container: {
     flex: 1,
     justifyContent: 'center',
-    flexDirection: 'row',
-    width: '50%'
+    flexDirection: 'row'
+
   },
-    container: {
-      width: '50%',
-      height: '100%',
-    },
+  inner_container:{
+    width: '30%',
+    height: '100%'
+  },
     pics: {
         height: 300
     },

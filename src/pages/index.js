@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
 
   },
   inner_container:{
-    width: '50%',
+    width: '30%',
     height: '100%'
   }
 })
