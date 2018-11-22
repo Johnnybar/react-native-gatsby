@@ -14,11 +14,9 @@ export class Menu extends React.Component {
   render() {
     return (<View style={styles.container}>
       <View style={styles.buttonRow}>
-        <TouchableOpacity style={styles.buttonStyles} onPress={()=>{
-          this.props.navigate('LessonRT')}
-        }><Link to="/videos-page/">
+        <TouchableOpacity style={styles.buttonStyles}><Link to="/videos-page/">
           <Text style={styles.buttonText}>
-            LESSONS
+            VIDEOS
           </Text>
         </Link>
         </TouchableOpacity>
@@ -48,9 +46,7 @@ export class Menu extends React.Component {
       </View>
       <View style={styles.aboutRow}>
 
-        <TouchableOpacity style={styles.buttonStyles} onPress={()=>{
-          console.log('AboutRT')}
-        }><Link to="/about-page/">
+        <TouchableOpacity style={styles.buttonStyles}><Link to="/about-page/">
           <Text style={styles.buttonText}>
             ABOUT
           </Text>
