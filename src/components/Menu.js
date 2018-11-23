@@ -35,12 +35,11 @@ export class Menu extends React.Component {
           </Text>
         </Link>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.buttonStyles} onPress={()=>{
-          this.props.navigate('ContactRT')}
-        }>
+        <TouchableOpacity style={styles.buttonStyles}><Link to="/contact-page/">
           <Text style={styles.buttonText}>
             CONTACT
           </Text>
+        </Link>
         </TouchableOpacity>
       </View>
       <View style={styles.aboutRow}>

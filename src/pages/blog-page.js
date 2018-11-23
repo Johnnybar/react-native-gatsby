@@ -9,6 +9,8 @@ import {
   TouchableOpacity
 } from 'react-native';
 import {Link} from 'gatsby'
+import {Header} from '../components/HeaderNew'
+
 export default class Blog extends React.Component {
   static navigationOptions = {
     header: null
@@ -41,6 +43,7 @@ export default class Blog extends React.Component {
       {
         this.state.blogLoaded && (
           <View style={styles.inner_container}>
+            <Header message= "Press to Log In" />
           <FlatList data={this.state.blogList} keyExtractor={(item, index) => item.ID.toString()} renderItem={({item}) =>
              <BlogItem id={item.ID} title={item.title} imageSrc={item.featured_image} excerpt={item.excerpt.replace(/<(?:.|\n)*?>/gm, '')} choosePost={this.chooseBlog}/>}/>
 

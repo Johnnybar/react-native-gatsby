@@ -51,6 +51,7 @@ componentDidMount(){
       ? 'Logged In'
       : this.props.message;
     return (<View style={styles.headStyle}>
+      
       <Image style={styles.logoStyle} source ={require('../assets/mountlogo.png')}/>
       <Text style={styles.headText} onPress={this.toggleUser}>{display}
       </Text>
@@ -61,7 +62,6 @@ componentDidMount(){
 const styles = StyleSheet.create({
   headStyle: {
     paddingTop: 30,
-    
     paddingRight: 10,
     backgroundColor: Platform.OS === 'android'
       ? '#31e981'

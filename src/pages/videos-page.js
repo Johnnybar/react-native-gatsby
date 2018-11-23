@@ -9,8 +9,10 @@ import {
   FlatList,
   Image,
   TouchableWithoutFeedback,
-  StyleSheet
+  StyleSheet,
+  Platform
 } from 'react-native';
+import {Header} from '../components/HeaderNew'
 
 let tubeUrl;
 let apiCode;
@@ -48,9 +50,12 @@ export default class Video extends React.Component {
   }
   render() {
     // const {navigate} = this.props.navigation
-    return (<View style={styles.container}>
+    return (
+
+      <View style={styles.container}>
       {
         this.state.listLoaded && (<View style={styles.inner_container}>
+          <Header message= "Press to Log In" />
           <FlatList data={this.state.videoList} renderItem = {({item})=>
                 <TubeItem
 
@@ -130,6 +135,24 @@ const styles = StyleSheet.create({
   inner_container: {
     width: '50%',
     height: '100%'
+  },
+  headStyle: {
+    paddingTop: 30,
+    paddingRight: 10,
+    backgroundColor: Platform.OS === 'android'
+      ? '#31e981'
+      : '#35605a',
+    flex: 1,
+    flexDirection: 'row',
+    borderBottomWidth: 2,
+    borderColor: '#000000',
+
+  },
+  headText: {
+    textAlign: 'right',
+    color: '#ffffff',
+    fontSize: 20,
+    flex: 1
   },
   backButton: {
     paddingBottom: 50,
