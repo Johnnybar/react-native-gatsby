@@ -42,7 +42,7 @@ export default class Blog extends React.Component {
         this.state.blogLoaded && (
           <View style={styles.inner_container}>
           <FlatList data={this.state.blogList} keyExtractor={(item, index) => item.ID.toString()} renderItem={({item}) =>
-             <BlogItem id={item.ID} title={item.title} imageSrc={item.featured_image} excerpt={item.excerpt} choosePost={this.chooseBlog}/>}/>
+             <BlogItem id={item.ID} title={item.title} imageSrc={item.featured_image} excerpt={item.excerpt.replace(/<(?:.|\n)*?>/gm, '')} choosePost={this.chooseBlog}/>}/>
 
         </View>)
       }
@@ -61,23 +61,6 @@ export default class Blog extends React.Component {
 
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    flexDirection: 'column'
-
-  },
-  inner_container: {
-    width: '50%'
-  },
-
-  backButton: {
-    paddingBottom: 50,
-    textAlign: 'center'
-  }
-
-});
 
 export class BlogItem extends React.Component {
   constructor(props) {
@@ -97,12 +80,13 @@ export class BlogItem extends React.Component {
   }
 
   render() {
-    return (<View style={styles.container}>
+    return (<View>
       {
-        !this.state.postLoaded && (<View style={styles.inner_container}>
+        !this.state.postLoaded && (<View>
           <TouchableOpacity onClick={() => this.blogChoice()}>
           <img style={{
-              width: '60%'
+              width: '100%',
+
             }} src={this.props.imageSrc}/>
             </TouchableOpacity>
           <h1 >{this.props.title}</h1>
@@ -110,27 +94,26 @@ export class BlogItem extends React.Component {
         </View>)
       }
       {
-        this.state.postLoaded && (<ScrollView style={styles.inner_container}>
+        this.state.postLoaded && (<ScrollView>
           <TouchableOpacity onPress={() => {
-
               this.setState((prevState, props) => ({postLoaded: false}))
             }}>
             <Image style={{
-                width: '100%',
+
                 height: 200
               }} source={{
                 uri: this.state.postImage
               }}/>
           </TouchableOpacity>
-          <div className="blTitle">
+          <div>
             <h1>{this.state.postTitle}</h1>
           </div>
 
-          <div className="blContent">
-            {this.state.postContent}
+          <div style={{ paddingBottom: 20 }}>
+            {this.state.postContent.replace(/<(?:.|\n)*?>/gm, '')}
           </div>
 
-          <div className="blBack">
+          <div>
             <Link to={'/'} style={{
                 textDecorationLine: 'none',
                 color: '#000000'
@@ -143,3 +126,23 @@ export class BlogItem extends React.Component {
     </View>);
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    flexDirection: 'column',
+
+
+  },
+  inner_container: {
+    width: '50%',
+
+  },
+
+  backButton: {
+    paddingBottom: 50,
+    textAlign: 'center'
+  }
+
+});
