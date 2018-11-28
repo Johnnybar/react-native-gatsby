@@ -51,7 +51,7 @@ componentDidMount(){
       ? 'Logged In'
       : this.props.message;
     return (<View style={styles.headStyle}>
-      
+
       <Image style={styles.logoStyle} source ={require('../assets/mountlogo.png')}/>
       <Text style={styles.headText} onPress={this.toggleUser}>{display}
       </Text>
