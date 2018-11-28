@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
   Alert
 } from 'react-native';
-
+let color;
 let num;
 
 export class Hero extends React.Component {
@@ -16,12 +16,13 @@ export class Hero extends React.Component {
     super(props);
     this.state = {
       color: new Animated.Value(0),
-      enlarge: new Animated.Value(0)
+      enlarge: new Animated.Value(0),
+      colorChange: false
     }
   }
 
   onAnimationCompletion = () => {
-
+console.log(num);
     if (num === 0) {
       num = 1
     }  else {
@@ -51,12 +52,14 @@ export class Hero extends React.Component {
   }
 
   render() {
-    const color = this.state.color.interpolate({
+    if(this.state.colorChange !== true){
+     color = this.state.color.interpolate({
       inputRange: [
         0, 1
       ],
       outputRange: ['#E9AFA3', '#F9DEC9']
     });
+    }
     return (<Animated.View style={[
         styles.headStyle, {
           height: this.state.enlarge,
@@ -64,7 +67,17 @@ export class Hero extends React.Component {
         }
       ]}>
       <TouchableOpacity style={{height: 200}} onPress={()=> {
-    this.animation(5)
+        color = this.state.color.interpolate({
+          inputRange: [
+            0, 1
+          ],
+          outputRange: ['#FFF05A', '#FF785A']
+        })
+        this.setState((prevState)=>({
+          color: new Animated.Value(0),
+          colorChange: !prevState.colorChange
+        }), this.animation(num))
+
     }}>
       </TouchableOpacity>
     </Animated.View>)
