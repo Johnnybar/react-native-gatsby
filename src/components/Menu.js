@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
 
   container: {
     flex: 6,
-    backgroundColor: '#35605a'
+    backgroundColor: '#444444'
   },
   buttonRow: {
     flex: 2,
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     borderColor: '#ffffff'
   },
   buttonStyles:{
-    backgroundColor:'#35605a',
+    backgroundColor:'F9DEC9',
     width: '50%',
     height: '50%',
     justifyContent: 'center',

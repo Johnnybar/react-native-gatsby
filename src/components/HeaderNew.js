@@ -64,8 +64,8 @@ const styles = StyleSheet.create({
     paddingTop: 30,
     paddingRight: 10,
     backgroundColor: Platform.OS === 'android'
-      ? '#31e981'
-      : '#35605a',
+      ? '#444444'
+      : '#444444',
     flex: 1,
     flexDirection: 'row',
     borderBottomWidth: 2,

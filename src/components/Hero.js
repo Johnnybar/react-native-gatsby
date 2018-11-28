@@ -5,9 +5,12 @@ import {
   Image,
   View,
   Animated,
-  TouchableOpacity
+  TouchableOpacity,
+  Alert
 } from 'react-native';
+
 let num;
+
 export class Hero extends React.Component {
   constructor(props) {
     super(props);
@@ -18,12 +21,10 @@ export class Hero extends React.Component {
   }
 
   onAnimationCompletion = () => {
-    console.log(num);
+
     if (num === 0) {
       num = 1
-    } else if (num === 1) {
-      num = 2
-    } else {
+    }  else {
       num = 0
     }
     this.animation(num);
@@ -45,16 +46,16 @@ export class Hero extends React.Component {
   }
 
   componentDidMount() {
-    
+
     this.animation(1)
   }
 
   render() {
     const color = this.state.color.interpolate({
       inputRange: [
-        0, 1, 2
+        0, 1
       ],
-      outputRange: ['#AEC5EB', '#F9DEC9', '#E9AFA3']
+      outputRange: ['#E9AFA3', '#F9DEC9']
     });
     return (<Animated.View style={[
         styles.headStyle, {
@@ -62,8 +63,10 @@ export class Hero extends React.Component {
           backgroundColor: color
         }
       ]}>
-      <Image style={styles.heroImage} source={require('../assets/Logo.png')}/>
-
+      <TouchableOpacity style={{height: 200}} onPress={()=> {
+    this.animation(5)
+    }}>
+      </TouchableOpacity>
     </Animated.View>)
   }
 }
