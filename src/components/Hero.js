@@ -47,7 +47,6 @@ console.log(num);
   }
 
   componentDidMount() {
-
     this.animation(1)
   }
 
@@ -60,25 +59,28 @@ console.log(num);
       outputRange: ['#E9AFA3', '#F9DEC9']
     });
     }
+    else{
+      color = this.state.color.interpolate({
+        inputRange: [
+          0, 1
+        ],
+        outputRange: ['#FFF05A', '#FF785A']
+      })
+    }
     return (<Animated.View style={[
         styles.headStyle, {
           height: this.state.enlarge,
           backgroundColor: color
         }
       ]}>
-      <TouchableOpacity style={{height: 200}} onPress={()=> {
-        color = this.state.color.interpolate({
-          inputRange: [
-            0, 1
-          ],
-          outputRange: ['#FFF05A', '#FF785A']
-        })
+      <TouchableOpacity style={{height: 200, alignItems: 'center'}} onPress={()=> {
+
         this.setState((prevState)=>({
           color: new Animated.Value(0),
           colorChange: !prevState.colorChange
-        }), this.animation(num))
+        }))
 
-    }}>
+    }}><Text style={{color: 'black', fontSize: 30}}>Tap background to change color theme</Text>
       </TouchableOpacity>
     </Animated.View>)
   }
