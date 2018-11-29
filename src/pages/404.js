@@ -4,12 +4,14 @@ import {
   StyleSheet,
 View
 } from 'react-native';
+import {Link} from 'gatsby'
 
 const NotFoundPage = () => (
   <Layout style={styles.container}>
     <View style={styles.inner_container}>
     <h1>NOT FOUND</h1>
     <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <Link style={{textAlign:'center'}} to='/'>Back</Link>
   </View>
   </Layout>
 )
