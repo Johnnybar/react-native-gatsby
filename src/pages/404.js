@@ -1,5 +1,9 @@
 import React from 'react'
-import Layout from '../components/layout'
+import Layout from '../components/layout';
+import {
+  StyleSheet,
+View
+} from 'react-native';
 
 const NotFoundPage = () => (
   <Layout style={styles.container}>
