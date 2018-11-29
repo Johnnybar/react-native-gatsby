@@ -1,6 +1,6 @@
 import React from 'react'
 // import Layout from '../components/layout'
-
+import '../assets/scss/main.scss'
 import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
 import {Link} from 'gatsby'
 import {Header} from '../components/HeaderNew'
