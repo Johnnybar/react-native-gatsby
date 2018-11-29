@@ -12,13 +12,15 @@ export class Header extends React.Component {
   }
   toggleUser = () => {
     if(this.state.isLoggedIn){
-      AsyncStorage.setItem('userLoggedIn', 'none', (err,result)=>{
-        this.setState({
-          isLoggedIn:false,
-          loggedUser: false
+      if (window.confirm('Are you sure you wish to log out?')) {
+        AsyncStorage.setItem('userLoggedIn', 'none', (err,result)=>{
+          this.setState({
+            isLoggedIn:false,
+            loggedUser: false
+          })
+          alert('User logged out')
         })
-        Alert.alert('User logged out')
-      })
+      }
     }
     else{
       navigate('/login-page')
@@ -46,7 +48,7 @@ export class Header extends React.Component {
 
   render() {
     let display = this.state.isLoggedIn
-      ? this.state.loggedUser + ', Click here to log out'
+      ? this.state.loggedUser
       : this.props.message;
     return (<View style={styles.headStyle}>
 

@@ -39,13 +39,12 @@ export default class Video extends React.Component {
   componentDidMount() {
 
     return fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=react_native&type=video&key=${apiCode}`).then((response) => response.json()).then((responseJson) => {
-      console.log(responseJson);
       this.setState({
         listLoaded: true,
         videoList: Array.from(responseJson.items)
       })
     }).catch((error) => {
-      console.error(error);
+      alert('Videos could not be loaded');
     })
   }
   render() {
