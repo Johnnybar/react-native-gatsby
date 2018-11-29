@@ -12,7 +12,7 @@ export class Header extends React.Component {
   }
   toggleUser = () => {
     if(this.state.isLoggedIn){
-      if (window.confirm('Are you sure you wish to log out?')) {
+      if (window.confirm('Are you sure you want to log out?')) {
         AsyncStorage.setItem('userLoggedIn', 'none', (err,result)=>{
           this.setState({
             isLoggedIn:false,
@@ -28,6 +28,7 @@ export class Header extends React.Component {
   }
 
   componentDidMount(){
+
     AsyncStorage.getItem('userLoggedIn', (err,result)=>{
       if (result === 'none'){
         console.log('NONE');
@@ -49,7 +50,7 @@ export class Header extends React.Component {
   render() {
     let display = this.state.isLoggedIn
       ? this.state.loggedUser
-      : this.props.message;
+      : 'Log In'
     return (<View style={styles.headStyle}>
 
       <Image style={styles.logoStyle} source ={require('../assets/mountlogo.png')}/>

@@ -32,7 +32,7 @@ class IndexPage extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.inner_container}>
-      <Header message='Press to log in'/>
+      <Header/>
       <Hero />
       <Menu/>
     </View>

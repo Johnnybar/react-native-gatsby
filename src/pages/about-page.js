@@ -25,7 +25,7 @@ export default class About extends React.Component {
                 <Image style={styles.pics} source={require('../assets/Logo.png')}/>
                 <Text style={styles.aboutTitle}>What We Do</Text>
                 <Text style={styles.aboutText}>{whatGlobo}</Text>
-                <Link to='/'>Back</Link>
+                <Link style={{textAlign:'center'}} to='/'>Back</Link>
                 </View>
             </View>
         );
@@ -53,8 +53,5 @@ const styles = StyleSheet.create({
     aboutText: {
         paddingBottom: 20,
     },
-    backButton: {
-        paddingBottom: 50,
-        textAlign: 'center'
-    }
+  
 });

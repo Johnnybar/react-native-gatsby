@@ -103,7 +103,8 @@ const styles= StyleSheet.create({
   },
   heading:{
     fontSize: 16,
-    flex:1
+    flex:1,
+    textAlign: 'center'
   },
   input: {
     flex: 1,
@@ -112,7 +113,8 @@ const styles= StyleSheet.create({
   },
   buttons: {
     marginTop: 15,
-    fontSize: 16
+    fontSize: 16,
+    textAlign: 'center'
   },
   labels:{
     paddingBottom:10

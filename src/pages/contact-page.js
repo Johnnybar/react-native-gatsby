@@ -32,7 +32,7 @@ export default class Contact extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.inner_container}>
-          <Header message = "Press to Log In" />
+          <Header />
         <Text style={styles.heading}>Contact Us</Text>
         <TextInput
           style={styles.inputs}
@@ -85,7 +85,8 @@ const styles = StyleSheet.create({
   },
     heading: {
       fontSize: 16,
-      flex:1
+      flex:1,
+      textAlign: 'center'
     },
     inputs: {
       flex: 1,

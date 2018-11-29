@@ -115,7 +115,8 @@ const styles= StyleSheet.create({
   },
   buttons: {
     marginTop: 15,
-    fontSize: 16
+    fontSize: 16,
+    textAlign: 'center'
   },
   labels:{
     paddingBottom:10

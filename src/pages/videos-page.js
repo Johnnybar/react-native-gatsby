@@ -54,7 +54,7 @@ export default class Video extends React.Component {
       <View style={styles.container}>
       {
         this.state.listLoaded && (<View style={styles.inner_container}>
-          <Header message= "Press to Log In" />
+          <Header />
           <FlatList data={this.state.videoList} renderItem = {({item})=>
                 <TubeItem
 
@@ -75,7 +75,7 @@ export default class Video extends React.Component {
         </View>)
       }
 
-      <Link to='/'>BACK</Link>
+      <Link style={{textAlign:'center'}} to='/'>Back</Link>
     </View>)
   }
 }
@@ -152,10 +152,6 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     fontSize: 20,
     flex: 1
-  },
-  backButton: {
-    paddingBottom: 50,
-    textAlign: 'center'
   },
   closeButton:{
     width: 100,
