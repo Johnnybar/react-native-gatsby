@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View, Image, Platform, AsyncStorage, Alert} from 'react-native';
+import { navigate } from "gatsby"
 
 export class Header extends React.Component {
   constructor(props) {
@@ -20,35 +21,32 @@ export class Header extends React.Component {
       })
     }
     else{
-      this.setState({
-        isLoggedIn: true
-      })
-
-      // this.props.navigate('LoginRT')
+      navigate('/login-page')
     }
   }
 
-componentDidMount(){
-  AsyncStorage.getItem('userLoggedIn', (err,result)=>{
-    if (result === 'none'){
-      console.log('NONE');
-    }
-    else if( result === null){
-      AsyncStorage.setItem('userLoggedIn', 'none', (err,result)=>{
-        console.log('Set user to NONE');
-      })
-    }
-    else{
-      this.setState({
-        isLoggedIn:true,
-        loggedUser: result
-      })
-    }
-  })
-}
+  componentDidMount(){
+    AsyncStorage.getItem('userLoggedIn', (err,result)=>{
+      if (result === 'none'){
+        console.log('NONE');
+      }
+      else if( result === null){
+        AsyncStorage.setItem('userLoggedIn', 'none', (err,result)=>{
+          console.log('Set user to NONE');
+        })
+      }
+      else{
+        this.setState({
+          isLoggedIn:true,
+          loggedUser: result
+        })
+      }
+    })
+  }
+
   render() {
     let display = this.state.isLoggedIn
-      ? 'Logged In'
+      ? this.state.loggedUser + ', Click here to log out'
       : this.props.message;
     return (<View style={styles.headStyle}>
 

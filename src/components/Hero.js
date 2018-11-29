@@ -73,7 +73,7 @@ export class Hero extends React.Component {
           backgroundColor: color
         }
       ]}>
-      <TouchableOpacity style={{height: 200, alignItems: 'center'}} onPress={()=> {
+      <TouchableOpacity style={{height: 400, alignItems: 'center'}} onPress={()=> {
 
         this.setState((prevState)=>({
           color: new Animated.Value(0),

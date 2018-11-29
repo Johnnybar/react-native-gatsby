@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
 
   },
   inner_container:{
-    width: '50%',
+    width: '70%',
     height: '100%'
   },
   backButton: {
