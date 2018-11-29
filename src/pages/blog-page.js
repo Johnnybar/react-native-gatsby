@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
 
   },
   inner_container: {
-    width: '70%',
+    width: '100%',
 
   },
 

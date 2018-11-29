@@ -105,7 +105,7 @@ const styles= StyleSheet.create({
 
   },
   inner_container:{
-    width: '70%',
+    width: '100%',
     height: '100%'
   },
   input: {
