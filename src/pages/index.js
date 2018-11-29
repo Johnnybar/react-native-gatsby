@@ -8,7 +8,6 @@ import {Hero} from '../components/Hero'
 import {Menu} from '../components/Menu'
 // import Footer from '../components/Footer'
 
-
 //This is Home.js from the original globo react native app
 
 class IndexPage extends React.Component {
