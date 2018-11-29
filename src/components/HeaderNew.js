@@ -31,11 +31,11 @@ export class Header extends React.Component {
 
     AsyncStorage.getItem('userLoggedIn', (err,result)=>{
       if (result === 'none'){
-        console.log('NONE');
+      {/*  console.log('NONE');*/}
       }
       else if( result === null){
         AsyncStorage.setItem('userLoggedIn', 'none', (err,result)=>{
-          console.log('Set user to NONE');
+        {/*  console.log('Set user to NONE');*/}
         })
       }
       else{

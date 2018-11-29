@@ -23,7 +23,7 @@ export class Hero extends React.Component {
 
   onAnimationCompletion = () => {
 
-    if (num === 0) {
+    if (num === 0 || num === undefined) {
       num = 1
     }  else {
       num = 0
@@ -31,11 +31,11 @@ export class Hero extends React.Component {
     this.animation(num);
   }
 
-  animation = (num) => {
+  animation = (number) => {
 
     Animated.parallel([
       Animated.timing(this.state.color, {
-        toValue: num, // Animate to opacity: 1 (opaque)
+        toValue: number, // Animate to opacity: 1 (opaque)
         duration: 1500
       }),
       Animated.timing(this.state.enlarge, {
