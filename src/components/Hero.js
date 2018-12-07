@@ -56,7 +56,7 @@ export class Hero extends React.Component {
       inputRange: [
         0, 1
       ],
-      outputRange: ['#E9AFA3', '#F9DEC9']
+      outputRange: ['#FFF05A', '#FF785A']
     });
     }
     else{
@@ -64,13 +64,14 @@ export class Hero extends React.Component {
         inputRange: [
           0, 1
         ],
-        outputRange: ['#FFF05A', '#FF785A']
+        outputRange: ['#7ed3d0', '#f7c4ff']
       })
     }
     return (<Animated.View style={[
         styles.headStyle, {
           height: this.state.enlarge,
-          backgroundColor: color
+          left: '-1vw',
+          width:'100%'
         }
       ]}>
       <TouchableOpacity style={{height: 400, alignItems: 'center'}} onPress={()=> {
@@ -80,7 +81,13 @@ export class Hero extends React.Component {
           colorChange: !prevState.colorChange
         }))
 
-    }}><Text style={{color: 'black', fontSize: 30}}>Tap background to change color theme</Text>
+    }}>
+    <Animated.Image style={{
+          height: this.state.enlarge,
+          backgroundColor: color,
+          width: '101vw',
+          left: '1vw'
+        }} source ={require('../assets/bg.png')}/>
       </TouchableOpacity>
     </Animated.View>)
   }
@@ -89,10 +96,8 @@ export class Hero extends React.Component {
 const styles = StyleSheet.create({
 
   headStyle: {
-    paddingTop: 30,
     paddingRight: 10,
     height: 400,
-    backgroundColor: 'rgb(206,200,192)',
     flex: 2,
     flexDirection: 'column',
     borderBottomWidth: 2,

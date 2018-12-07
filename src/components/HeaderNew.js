@@ -50,7 +50,7 @@ export class Header extends React.Component {
   render() {
     let display = this.state.isLoggedIn
       ? this.state.loggedUser
-      : 'Log In'
+      : 'LOG IN'
     return (<View style={styles.headStyle}>
 
       <Image style={styles.logoStyle} source ={require('../assets/mountlogo.png')}/>
@@ -65,8 +65,8 @@ const styles = StyleSheet.create({
     paddingTop: 30,
     paddingRight: 10,
     backgroundColor: Platform.OS === 'android'
-      ? '#444444'
-      : '#444444',
+      ? '#976008'
+      : '#976008',
     flex: 1,
     flexDirection: 'row',
     borderBottomWidth: 2,
