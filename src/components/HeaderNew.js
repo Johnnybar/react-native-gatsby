@@ -53,7 +53,7 @@ export class Header extends React.Component {
       : 'LOG IN'
     return (<View style={styles.headStyle}>
 
-      <Image style={styles.logoStyle} source ={require('../assets/mountlogo.png')}/>
+      <Image style={styles.logoStyle} source ={require('../assets/ruler.png')}/>
       <Text style={styles.headText} onPress={this.toggleUser}>{display}
       </Text>
     </View>)
@@ -62,14 +62,15 @@ export class Header extends React.Component {
 
 const styles = StyleSheet.create({
   headStyle: {
-    paddingTop: 30,
+    paddingTop: 1,
+
     paddingRight: 10,
     backgroundColor: Platform.OS === 'android'
-      ? '#976008'
-      : '#976008',
-    flex: 1,
+      ? '#c87f0a'
+      : '#c87f0a',
+    flex: 2,
     flexDirection: 'row',
-    borderBottomWidth: 2,
+    borderBottomWidth: 1,
     borderColor: '#000000',
 
   },
@@ -77,11 +78,12 @@ const styles = StyleSheet.create({
     textAlign: 'right',
     color: '#ffffff',
     fontSize: 20,
-    flex: 1
+    flex: 1,
   },
   logoStyle:{
-    flex: 1,
-    width: undefined,
-    height: undefined
+    left: '20px',
+    flex: 0.2,
+    height: '8vh',
+    transform: [{ rotateY: '180deg' }]
   }
 })
