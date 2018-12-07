@@ -1,3 +1,5 @@
+Simulating native features with React-Native syntax using an online web app as a wrapper
 
+![alt text](https://github.com/Johnnybar/react-native-gatsby/src/assets/native-gatsby.png?raw=true "Title")
 
-Run `gatsby develop` in the terminal to start the dev site.
+Run `gatsby serve` in the terminal to start the dev site.
