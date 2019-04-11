@@ -21,7 +21,7 @@ if (process.env.NODE_ENV != 'production') {
   secrets = require('../../secrets.json');
   apiCode = secrets.api;
 } else {
-  apiCode = process.env.API;
+  apiCode = process.env.API_KEY;
 }
 
 export default class Video extends React.Component {
