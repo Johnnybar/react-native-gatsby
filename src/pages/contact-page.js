@@ -34,11 +34,14 @@ export default class Contact extends React.Component {
         <View style={styles.inner_container}>
           <Header />
         <Text style={styles.heading}>Contact Us</Text>
+        <View style={styles.input_field}>
         <TextInput
           style={styles.inputs}
           onChangeText = {(text)=> this.setState({name: text})}
           value ={this.state.name}
         />
+      </View>
+        <View style={styles.input_field}>
         <TextInput
           style={styles.multiInput}
           onChangeText = {(text)=> this.setState({msg: text})}
@@ -46,11 +49,15 @@ export default class Contact extends React.Component {
           multiline= {true}
           numberOfLines = {4}
         />
+      </View>
+      <View style={styles.input_field}>
+
         <TextInput
           style={styles.inputs}
           onChangeText = {(text)=> this.setState({email: text})}
           value ={this.state.email}
         />
+
         <TouchableHighlight onPress = {this.sendMessage} underlayColor = '#31e981'>
           <Text style = {styles.button}>
             Send Message
@@ -61,6 +68,7 @@ export default class Contact extends React.Component {
             Reset Form
           </Text>
       </TouchableHighlight>
+      </View>
     </View>
     <Link to='/'>Back</Link>
       </View>
@@ -92,6 +100,11 @@ const styles = StyleSheet.create({
       flex: 1,
       width: '80%',
       padding: 10
+    },
+    input_field: {
+      marginLeft: 'auto',
+      marginRight: 'auto',
+      width: '80%',
     },
     multiInput: {
       flex: 2,

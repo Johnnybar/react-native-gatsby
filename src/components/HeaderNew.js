@@ -53,7 +53,7 @@ export class Header extends React.Component {
       : 'LOG IN'
     return (<View style={styles.headStyle}>
 
-      <Image style={styles.logoStyle} source ={require('../assets/ruler.png')}/>
+      <Image style={styles.logoStyle} source ={require('../assets/logo-react.png')}/>
       <Text style={styles.headText} onPress={this.toggleUser}>{display}
       </Text>
     </View>)
@@ -62,9 +62,11 @@ export class Header extends React.Component {
 
 const styles = StyleSheet.create({
   headStyle: {
+    display: 'flex',
+    alignItems:'center',
     paddingTop: 1,
-
     paddingRight: 10,
+
     backgroundColor: Platform.OS === 'android'
       ? '#c87f0a'
       : '#c87f0a',
@@ -81,9 +83,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   logoStyle:{
-    left: '20px',
+    left: 'auto',
     flex: 0.2,
     height: '8vh',
-    transform: [{ rotateY: '180deg' }]
+    right: 30
   }
 })

@@ -88,11 +88,12 @@ export class BlogItem extends React.Component {
         !this.state.postLoaded && (<View>
           <TouchableOpacity onClick={() => this.blogChoice()}>
           <img style={{
-              width: '100%',
+              width: '50%',
+              margin: 'auto'
 
             }} src={this.props.imageSrc}/>
             </TouchableOpacity>
-          <h1 >{this.props.title}</h1>
+          <h1>{this.props.title}</h1>
           <h4>{this.props.excerpt}</h4>
         </View>)
       }
@@ -102,7 +103,6 @@ export class BlogItem extends React.Component {
               this.setState((prevState, props) => ({postLoaded: false}))
             }}>
             <Image style={{
-
                 height: 200
               }} source={{
                 uri: this.state.postImage
@@ -135,7 +135,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     flexDirection: 'column',
-
 
   },
   inner_container: {

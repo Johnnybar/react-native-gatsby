@@ -70,7 +70,7 @@ export class Hero extends React.Component {
     return (<Animated.View style={[
         styles.headStyle, {
           height: this.state.enlarge,
-          left: '-1vw',
+
           width:'100%'
         }
       ]}>
@@ -86,8 +86,7 @@ export class Hero extends React.Component {
           height: this.state.enlarge,
           backgroundColor: color,
           width: '100%',
-          left: '3%'
-        }} source ={require('../assets/bg.png')}/>
+        }} source ={require('../assets/bg2.png')}/>
       </TouchableOpacity>
     </Animated.View>)
   }
@@ -96,7 +95,6 @@ export class Hero extends React.Component {
 const styles = StyleSheet.create({
 
   headStyle: {
-    paddingRight: 10,
     height: 400,
     flex: 2,
     flexDirection: 'column',
