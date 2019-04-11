@@ -52,9 +52,11 @@ export default class Video extends React.Component {
     return (
 
       <View style={styles.container}>
+
       {
         this.state.listLoaded && (<View style={styles.inner_container}>
           <Header />
+          <Text style={styles.title}>YouTube Results for 'React Native'</Text>
           <FlatList data={this.state.videoList} renderItem = {({item})=>
                 <TubeItem
 
@@ -93,6 +95,7 @@ export class TubeItem extends React.Component {
 
   render() {
     return (<View>
+
       {
         this.state.ytLink && (<View>
           <iframe src={this.state.ytLink} width="560" height="315" frameBorder="0" allowFullScreen="allowFullScreen"></iframe>
@@ -100,12 +103,9 @@ export class TubeItem extends React.Component {
         </View>)
       }
       {
-        !this.state.ytLink && <TouchableWithoutFeedback onPress={this.onPress}>
+        !this.state.ytLink && <TouchableWithoutFeedback  onPress={this.onPress}>
 
-            <View style={{
-                paddingTop: 20,
-                alignItems: 'center'
-              }}>
+            <View style={styles.video_field}>
               <Image style={{
                   width: '100%',
                   height: 200
@@ -135,6 +135,13 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%'
   },
+  title:{
+    textAlign:'center',
+    padding: 10,
+    fontWeight: 'bold',
+    fontSize: 20,
+    fontStyle:'oblique'
+  },
   headStyle: {
     paddingTop: 30,
     paddingRight: 10,
@@ -146,6 +153,11 @@ const styles = StyleSheet.create({
     borderBottomWidth: 2,
     borderColor: '#000000',
 
+  },
+  video_field: {
+    margin: 'auto',
+    width: '80%',
+    padding: 20
   },
   headText: {
     textAlign: 'right',

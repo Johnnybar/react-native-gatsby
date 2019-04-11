@@ -83,10 +83,12 @@ export class BlogItem extends React.Component {
   }
 
   render() {
-    return (<View>
+    return (<View style={styles.blog_container}>
       {
-        !this.state.postLoaded && (<View>
-          <TouchableOpacity onClick={() => this.blogChoice()}>
+        !this.state.postLoaded && (
+          <View>
+            <View style={styles.text_field}>
+              <TouchableOpacity onClick={() => this.blogChoice()}>
           <img style={{
               width: '50%',
               margin: 'auto'
@@ -95,10 +97,12 @@ export class BlogItem extends React.Component {
             </TouchableOpacity>
           <h1>{this.props.title}</h1>
           <h4>{this.props.excerpt}</h4>
+        </View>
         </View>)
       }
       {
-        this.state.postLoaded && (<ScrollView>
+        this.state.postLoaded && (<ScrollView style={styles.blog_container}>
+          <View style={styles.open_text_field}>
           <TouchableOpacity onPress={() => {
               this.setState((prevState, props) => ({postLoaded: false}))
             }}>
@@ -108,11 +112,13 @@ export class BlogItem extends React.Component {
                 uri: this.state.postImage
               }}/>
           </TouchableOpacity>
-          <div>
+        </View>
+          <View style={styles.open_text_field}>
             <h1>{this.state.postTitle}</h1>
-          </div>
+          </View>
 
-          <div style={{ paddingBottom: 20 }}>
+
+          <div style={{ padding: 20 }}>
             {this.state.postContent.replace(/<(?:.|\n)*?>/gm, '')}
           </div>
 
@@ -135,13 +141,24 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     flexDirection: 'column',
-
+  },
+  blog_container:{
+    paddingTop: 40
   },
   inner_container: {
     width: '100%',
 
   },
-
+  text_field: {
+    margin: 'auto',
+    width: '50%',
+    textAlign: 'center'
+  },
+  open_text_field: {
+    margin: 'auto',
+    width: '70%',
+    textAlign: 'center'
+  },
   backButton: {
     paddingBottom: 50,
     textAlign: 'center'
