@@ -3,6 +3,7 @@ import {
   Text,
   View,
   FlatList,
+  WebView,
   StyleSheet,
   ScrollView,
   Image,
@@ -83,6 +84,11 @@ export class BlogItem extends React.Component {
   }
 
   render() {
+    let newState
+    if (this.state.postContent){
+      newState = this.state.postContent.replace(/<(?:.|\n)*?>/gm, '')
+      console.log(newState);
+  }
     return (<View style={styles.blog_container}>
       {
         !this.state.postLoaded && (
@@ -118,9 +124,9 @@ export class BlogItem extends React.Component {
           </View>
 
 
-          <div style={{ padding: 20 }}>
-            {this.state.postContent.replace(/<(?:.|\n)*?>/gm, '')}
-          </div>
+          <View style={{ padding: 20 }}>
+            <div dangerouslySetInnerHTML={{ __html: newState }} />
+          </View>
 
           <div>
             <Link to={'/'} style={{

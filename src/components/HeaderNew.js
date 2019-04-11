@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
   headText: {
     textAlign: 'right',
     color: '#ffffff',
-    fontSize: 16,
+    fontSize: 12,
     flex: 1,
   },
   logoStyle:{
