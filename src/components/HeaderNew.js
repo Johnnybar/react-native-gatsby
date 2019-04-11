@@ -63,8 +63,7 @@ export class Header extends React.Component {
 const styles = StyleSheet.create({
   headStyle: {
     display: 'flex',
-    alignItems:'center',
-    paddingTop: 1,
+    alignContent:'center',
     paddingRight: 10,
 
     backgroundColor: Platform.OS === 'android'
@@ -79,13 +78,20 @@ const styles = StyleSheet.create({
   headText: {
     textAlign: 'right',
     color: '#ffffff',
-    fontSize: 20,
+    fontSize: 16,
     flex: 1,
   },
   logoStyle:{
     left: 'auto',
     flex: 0.2,
-    height: '8vh',
-    right: 30
+    width: 'auto',
+    height: 'auto',
+    paddingTop: 45,
+    paddingBottom: 45,
+    paddingLeft: 45
+
+
+
+
   }
 })
