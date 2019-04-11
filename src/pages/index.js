@@ -29,11 +29,11 @@ class IndexPage extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
+    <View style={styles.container}>
         <View style={styles.inner_container}>
-      <Header/>
-      <Hero />
-      <Menu/>
+          <Header/>
+          <Hero />
+          <Menu/>
     </View>
   </View>)
 
@@ -41,9 +41,12 @@ class IndexPage extends React.Component {
 }
 const styles = StyleSheet.create({
   container: {
+    display: 'flex',
     flex: 1,
     justifyContent: 'center',
-    flexDirection: 'row'
+    flexDirection: 'row',
+    width: '50vw',
+    margin: 0
 
   },
   inner_container:{
