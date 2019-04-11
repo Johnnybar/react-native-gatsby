@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flexDirection: 'row',
     width: '50vw',
-    margin: 0
+    margin: 'auto'
 
   },
   inner_container:{

@@ -85,8 +85,8 @@ export class Hero extends React.Component {
     <Animated.Image style={{
           height: this.state.enlarge,
           backgroundColor: color,
-          width: '101%',
-          left: '1vw'
+          width: '100%',
+          left: '3%'
         }} source ={require('../assets/bg.png')}/>
       </TouchableOpacity>
     </Animated.View>)
