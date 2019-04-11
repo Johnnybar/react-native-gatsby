@@ -17,16 +17,16 @@ export default class About extends React.Component {
             <View style={styles.container}>
               <View style={styles.inner_container}>
                   <Header message= "Press to Log In" />
+                  <View style={styles.text_field}>
                 <Image style={styles.pics} source={require('../assets/logo-react.png')}/>
 
                 <Text style={styles.aboutTitle}>What This Is</Text>
-                <View style={styles.text_field}>
                 <Text style={styles.aboutText}>{about}</Text>
               </View>
 
+              <View style={styles.text_field}>
                 <Image style={styles.pics} source={require('../assets/laptop-mobile.jpg')}/>
                 <Text style={styles.aboutTitle}>What's the point?</Text>
-                <View style={styles.text_field}>
                 <Text style={styles.aboutText}>{what}</Text>
               </View>
                 <Link style={{textAlign:'center'}} to='/'>Back</Link>
@@ -49,11 +49,15 @@ const styles = StyleSheet.create({
   },
   text_field: {
     margin: 'auto',
-    width: '80%',
-    textAlign:'center'
+    width: '60%',
+    textAlign:'center',
+    padding: 10
   },
     pics: {
-        height: 300
+      width: 200,
+      height: 200,
+      // marginLeft: 'auto',
+      margin: 'auto'
     },
     aboutTitle: {
         paddingTop: 10,
