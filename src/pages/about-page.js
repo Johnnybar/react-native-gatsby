@@ -5,7 +5,7 @@ import { Button, StyleSheet, Text, View, ScrollView, Image } from 'react-native'
 import {Header} from '../components/HeaderNew'
 const about = `A representation of a React Native app with native features and syntax as an online, in-browser web application, using Gatsby and React-Native-Web.
 Feel free to browse and test the different features of the page, using YouTube' Data API, Wordpress's Public API, React Native's Animated library and the registration and log-in/authorization flow.`
-const what = `Intended as an online solution to allow sharing the look and feel of an app without the need for an app simulator, server or launching it on the App Store.`
+const what = `Intended as an online solution to allow sharing the look and feel of an app without the need for an app simulator, server or launching on the App Store.`
 
 export default class About extends React.Component {
     static navigationOptions = {
